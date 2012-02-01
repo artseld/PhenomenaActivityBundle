@@ -26,4 +26,4 @@ TODOs:
 1. Testing. We need a lot of testing.
 
 [1]: https://github.com/pluff/PhenomenaActivityBundle/blob/master/Resources/doc
-[2]: https://github.com/pluff/PhenomenaActivityBundle/blob/master/Resources/doc/01-installation.rst
+[2]: https://github.com/pluff/PhenomenaActivityBundle/blob/master/Resources/doc/01-installation.md
