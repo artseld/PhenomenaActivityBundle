@@ -1,8 +1,8 @@
 README
 ======
 
-The bundle still not usable, yet!!!
------------------------------------
+The bundle still not usable!!!
+------------------------------
 
 
 What is PhenomenaActivityBundle?
@@ -25,5 +25,5 @@ TODOs:
 
 1. Testing. We need a lot of testing.
 
-[1]: https://github.com/pluff/PhenomenaActivityBundle/Resources/doc/
-[2]: https://github.com/pluff/PhenomenaActivityBundle/Resources/doc/01-installation.rst
+[1]: https://github.com/pluff/PhenomenaActivityBundle/blob/master/Resources/doc
+[2]: https://github.com/pluff/PhenomenaActivityBundle/blob/master/Resources/doc/01-installation.rst
