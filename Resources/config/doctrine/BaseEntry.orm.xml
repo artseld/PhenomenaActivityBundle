@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <mapped-superclass name="Phenomena\ActivityBundle\Entity\BaseEntry">
+            <field name="params" type="text" column="params"/>
+            <field name="template" type="string" column="template"/>
+            <field name="created_at" type="datetime" column="created_at"/>
+            <lifecycle-callbacks/>
+    </mapped-superclass>
+</doctrine-mapping>
