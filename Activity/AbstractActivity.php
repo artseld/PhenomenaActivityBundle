@@ -38,12 +38,10 @@ abstract class AbstractActivity implements ConsumerInterface
      */
     private $templating;
 
-    public function __construct($name,Producer $producer,Registry $doctrine, EngineInterface $templating, $template = null) {
+    public function __construct($name,Producer $producer, $template = null) {
         $this->name = $name;
         $this->producer = $producer;
-        $this->em = $doctrine->getEntityManager();
-        $this->templating = $templating;
-        $this->template = ($template) ? $template : 'PhenomenaActivityBundle:Activity:'.$name.'.twig.html';
+        $this->template = ($template) ? $template : 'PhenomenaActivityBundle:Activity:'.$name.'.html.twig';
     }
 
     abstract public function init(LifecycleEventArgs $event);
@@ -53,7 +51,6 @@ abstract class AbstractActivity implements ConsumerInterface
         if ($msg) {
             $this->getProducer()->publish($msg,$this->getName());
         }
-
     }
 
     abstract protected function export();
@@ -78,10 +75,6 @@ abstract class AbstractActivity implements ConsumerInterface
 
     public function getProducer() {
         return $this->producer;
-    }
-
-    public function getEntityManager() {
-        return $this->em;
     }
 }
 

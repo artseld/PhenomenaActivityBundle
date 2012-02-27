@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <!--
+    <parameters>
+        <parameter key="phenomena_activity.example.class">Phenomena\ActivityBundle\Example</parameter>
+    </parameters>
+
+    <services>
+        <service id="phenomena_activity.example" class="%phenomena_activity.example.class%">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+    <parameters>
+        <parameter key="phenomena_activity.twig.extension.class">Phenomena\ActivityBundle\Twig\Extension</parameter>
+    </parameters>
+    <services>
+        <service id="phenomena_activity.twig.extension" class="%phenomena_activity.twig.extension.class%">
+            <tag name="twig.extension" />
+            <argument type="service" id="service_container" />
+            <!--<argument>plain_value</argument>-->
+            <!--<argument>%parameter_name%</argument>-->
+        </service>
+    </services>
+</container>

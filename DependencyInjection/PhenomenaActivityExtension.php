@@ -33,17 +33,20 @@ class PhenomenaActivityExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('listener.xml');
+        $loader->load('twig.xml');
 
         //Load services fore listening
         if (isset($config['activity'])) {
+            $this->loadActivities($config,$container);
+        }
+    }
 
-            $listener = $container->getDefinition('phenomena_activity.orm.listener');
-
-            foreach ($config['activity'] as $name=>$c) {
-                $entity_name = $c['source_entity'];
-                $activity_config = array('activity'=>'phenomena_activity.activity.'.$name);
-                $listener->addMethodCall('addSourceConfiguration',array($entity_name,$activity_config));
-            }
+    private function loadActivities($config,$container) {
+        $listener = $container->getDefinition('phenomena_activity.orm.listener');
+        foreach ($config['activity'] as $name=>$c) {
+            $entity_name = $c['source_entity'];
+            $activity_config = array('activity'=>'phenomena_activity.activity.'.$name);
+            $listener->addMethodCall('addSourceConfiguration',array($entity_name,$activity_config));
         }
     }
 }
