@@ -26,8 +26,7 @@ class EntityListener {
          */
         $class = get_class($args->getEntity());
         if (mb_strpos($class,'Proxies\\') === 0) { //This is proxy class.
-            $class = mb_substr($class,8);
-            $class = mb_substr($class,0,mb_strlen($class)-5);
+            $class = mb_substr($class,14);
         }
 
         $class = str_replace('\\','',$class);
